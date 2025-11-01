@@ -34,11 +34,12 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
+        run: echo "The tag base will be: ghcr.io/${{ lower(github.repository_owner) }}"
         with:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: |
+          tags:
             ghcr.io/${{ lower(github.repository_owner) }}/railway:2025
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}

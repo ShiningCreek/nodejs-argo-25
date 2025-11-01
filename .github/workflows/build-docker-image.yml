@@ -34,7 +34,7 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
-        run: echo "The tag base will be: ghcr.io/${{ lower(github.repository_owner) }}"
+        run: echo "The tag base will be: ghcr.io/${{github.repository_owner}}"
         with:
           context: .
           push: true
